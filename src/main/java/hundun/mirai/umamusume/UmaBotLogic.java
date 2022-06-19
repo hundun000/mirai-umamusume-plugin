@@ -16,7 +16,7 @@ public class UmaBotLogic extends BaseJavaBotLogic {
         super(plugin, "赛马");
         
         
-        var function = new UmaFunction(this, plugin, characterName);
+        var function = new UmaFunction(this, plugin, characterName, "赛马");
         function.setSkipRegisterCommand(false);
         registerFunction(function);
     }

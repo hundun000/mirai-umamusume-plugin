@@ -9,6 +9,9 @@ import java.util.function.Supplier;
 import hundun.simulationgame.umamusume.horse.HorsePrototype;
 import hundun.simulationgame.umamusume.horse.HorsePrototypeFactory;
 import hundun.simulationgame.umamusume.horse.RunStrategyType;
+import hundun.simulationgame.umamusume.race.RaceLengthType;
+import hundun.simulationgame.umamusume.race.RacePrototype;
+import hundun.simulationgame.umamusume.race.TrackGroundType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UmaConfig {
     List<HorsePrototype> playerHorses;
+    List<RacePrototype> races;
     List<HorsePrototype> rivalHorses;
     
     public static Supplier<UmaConfig> defaultValue() {
@@ -29,6 +33,7 @@ public class UmaConfig {
             UmaConfig config = new UmaConfig();
             config.setPlayerHorses(new ArrayList<>());
             config.setRivalHorses(new ArrayList<>());
+            config.setRaces(new ArrayList<>());
             HorsePrototype horsePrototype;
             
             horsePrototype = new HorsePrototype();
@@ -40,6 +45,7 @@ public class UmaConfig {
             horsePrototype.setBaseWisdom((int) (200* 1.05));
             horsePrototype.setDefaultRunStrategyType(RunStrategyType.FRONT);
             HorsePrototypeFactory.fillDefaultFields(horsePrototype);
+            horsePrototype.setCharImage("🏇📆");
             config.getPlayerHorses().add(horsePrototype);
             
             NumberFormat formatter = new DecimalFormat("#000");
@@ -53,6 +59,7 @@ public class UmaConfig {
                 horsePrototype.setBaseWisdom(200);
                 horsePrototype.setDefaultRunStrategyType(RunStrategyType.FIRST);
                 HorsePrototypeFactory.fillDefaultFields(horsePrototype);
+                horsePrototype.setCharImage("🏇🦌");
                 config.getRivalHorses().add(horsePrototype);
             }
             for (int i = 1; i <= 5; i++) {
@@ -65,6 +72,7 @@ public class UmaConfig {
                 horsePrototype.setBaseWisdom(200);
                 horsePrototype.setDefaultRunStrategyType(RunStrategyType.BACK);
                 HorsePrototypeFactory.fillDefaultFields(horsePrototype);
+                horsePrototype.setCharImage("🏇🌱");
                 config.getRivalHorses().add(horsePrototype);
             }
             for (int i = 1; i <= 5; i++) {
@@ -77,8 +85,44 @@ public class UmaConfig {
                 horsePrototype.setBaseWisdom(200);
                 horsePrototype.setDefaultRunStrategyType(RunStrategyType.TAIL);
                 HorsePrototypeFactory.fillDefaultFields(horsePrototype);
+                horsePrototype.setCharImage("🏇🚢");
                 config.getRivalHorses().add(horsePrototype);
             }
+            
+            RacePrototype racePrototype;
+            
+            racePrototype = new RacePrototype();
+            racePrototype.setName("短距离训练场");
+            racePrototype.setGroundType(TrackGroundType.TURF);
+            racePrototype.setLength(1200);
+            racePrototype.setLengthType(RaceLengthType.MILE);
+            racePrototype.setDefaultHorseNum(4);
+            config.getRaces().add(racePrototype);
+            
+            racePrototype = new RacePrototype();
+            racePrototype.setName("英里训练场");
+            racePrototype.setGroundType(TrackGroundType.TURF);
+            racePrototype.setLength(1600);
+            racePrototype.setLengthType(RaceLengthType.MILE);
+            racePrototype.setDefaultHorseNum(4);
+            config.getRaces().add(racePrototype);
+            
+            racePrototype = new RacePrototype();
+            racePrototype.setName("中距离训练场");
+            racePrototype.setGroundType(TrackGroundType.TURF);
+            racePrototype.setLength(2000);
+            racePrototype.setLengthType(RaceLengthType.MEDIUM);
+            racePrototype.setDefaultHorseNum(4);
+            config.getRaces().add(racePrototype);
+            
+            racePrototype = new RacePrototype();
+            racePrototype.setName("长距离训练场");
+            racePrototype.setGroundType(TrackGroundType.TURF);
+            racePrototype.setLength(3000);
+            racePrototype.setLengthType(RaceLengthType.LONG);
+            racePrototype.setDefaultHorseNum(4);
+            config.getRaces().add(racePrototype);
+            
             return config;
         };
     }
