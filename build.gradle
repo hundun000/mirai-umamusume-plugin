@@ -36,11 +36,13 @@ mirai { jvmTarget = JavaVersion.VERSION_11}
 version = '-SNAPSHOT'
 
 dependencies {
+    implementation 'com.github.hundun000:umamusume-simulation:f91bf37009'
+    implementation 'com.github.hundun000.mirai-fleet-framework:framework-core:0.5.7'
     
     compileOnly 'org.projectlombok:lombok:1.18.4'
     annotationProcessor 'org.projectlombok:lombok:1.18.4'
     
-    testCompile "junit:junit:4.11"
+    testImplementation "junit:junit:4.11"
 }
 
 
