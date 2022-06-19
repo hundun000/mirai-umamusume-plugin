@@ -37,7 +37,7 @@ version = '-SNAPSHOT'
 
 dependencies {
     implementation 'com.github.hundun000:umamusume-simulation:f4e4cf5161'
-    implementation 'com.github.hundun000.mirai-fleet-framework:framework-core:0.5.7'
+    implementation 'com.github.hundun000.mirai-fleet-framework:framework-core:0.5.8'
     
     compileOnly 'org.projectlombok:lombok:1.18.4'
     annotationProcessor 'org.projectlombok:lombok:1.18.4'

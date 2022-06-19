@@ -1,4 +1,4 @@
-package hundun.mirai.template;
+package hundun.mirai.umamusume;
 
 import hundun.mirai.umamusume.UmaPlugin;
 import net.mamoe.mirai.console.plugin.PluginManager;

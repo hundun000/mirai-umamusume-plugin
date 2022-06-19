@@ -14,7 +14,8 @@
 <details>
 <summary>展开/收起</summary>
 
-![image](docs/演示.jpg)  
+![image](docs/演示_0.jpg)  
+![image](docs/演示_1.jpg)  
 
 </details>
 
@@ -22,34 +23,7 @@
 
 本项目提供的是mirai-console插件，用户应自行学习和准备好mirai-console。确保可以[在聊天环境执行指令](https://github.com/project-mirai/chat-command)。
 
-本插件的指令受mirai-console权限系统管理，[权限授予说明](https://github.com/mamoe/mirai/blob/dev/docs/ConsoleTerminal.md#%E5%9C%A8%E7%BE%A4%E8%81%8A%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4-%E6%9D%83%E9%99%90%E6%8E%88%E4%BA%88)。且除了指令权限id`hundun.mirai.umamusume:command.umacommand`，还有一个特殊权限`hundun.mirai.umamusume.cos:INSTANCE`来作为本插件的服务开关（当同一个console里有多个bot加了同一个群，可控制仅单个bot使用本插件）。
-
-#### 方式1：通过指令授权
-
-[用PermissionCommand授权群员使用指令的权限](https://github.com/mamoe/mirai-console/blob/master/docs/BuiltInCommands.md#%E6%8E%88%E4%BA%88%E4%B8%80%E4%B8%AA%E7%94%A8%E6%88%B7%E6%89%A7%E8%A1%8C%E6%89%80%E6%9C%89%E6%8C%87%E4%BB%A4%E7%9A%84%E6%9D%83%E9%99%90)
-
-用PermissionCommand授权特殊权限：
-> /perm permit m111111.* hundun.mirai.umamusume:*
-> 
-> 表示允许111111群的任意群员使用本插件的所有指令
-> 
-> /perm permit m111111.222222 hundun.mirai.umamusume.cos:INSTANCE 
-> 
-> 表示bot账号222222在群1111111启用本插件。注意，这里的222222是bot自身的账号。
-
-#### 方式2：直接编辑PermissionService.yml
-
-授权后的config/Console/PermissionService.yml内容示例：
-```
-grantedPermissionMap: 
-  ……
-  'hundun.mirai.umamusume:*':             # 本插件所有指令权限
-    - 'm111111.*'                         # 允许111111群的任意群员使用本插件的所有指令
-  'hundun.mirai.umamusume.cos:INSTANCE':  # 特殊权限，表示本插件的开关
-    - m111111.222222                      # bot账号222222在群1111111启用本插件。注意，这里的222222是bot自身的账号。
-```
-
-如此配置后，即使群1111111有多个bot账号，也只有账号222222会回应指令。
+本插件的指令受mirai-console权限系统管理，[权限授予说明](https://github.com/mamoe/mirai/blob/dev/docs/ConsoleTerminal.md#%E5%9C%A8%E7%BE%A4%E8%81%8A%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4-%E6%9D%83%E9%99%90%E6%8E%88%E4%BA%88)。指令权限id`hundun.mirai.umamusume:command.umacommand`。
 
 ## 指令
 
