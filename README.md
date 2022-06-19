@@ -23,7 +23,7 @@
 
 本项目提供的是mirai-console插件，用户应自行学习和准备好mirai-console。确保可以[在聊天环境执行指令](https://github.com/project-mirai/chat-command)。
 
-本插件的指令受mirai-console权限系统管理，[权限授予说明](https://github.com/mamoe/mirai/blob/dev/docs/ConsoleTerminal.md#%E5%9C%A8%E7%BE%A4%E8%81%8A%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4-%E6%9D%83%E9%99%90%E6%8E%88%E4%BA%88)。指令权限id`hundun.mirai.umamusume:command.umacommand`。
+本插件的指令受mirai-console权限系统管理，[权限授予说明](https://github.com/mamoe/mirai/blob/dev/docs/ConsoleTerminal.md#%E5%9C%A8%E7%BE%A4%E8%81%8A%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4-%E6%9D%83%E9%99%90%E6%8E%88%E4%BA%88)。指令权限id`hundun.mirai.umamusume:command.赛马`。
 
 ## 指令
 
@@ -72,6 +72,7 @@
     "playerHorses" : [ 
       {
         "name" : "特别周001",
+        "charImage" : "\uD83C\uDFC7\uD83D\uDCC6",
         "baseSpeed" : 630,
         "baseStamina" : 630,
         "basePower" : 630,
