@@ -1,0 +1,56 @@
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10' 
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10'
+    id 'net.mamoe.mirai-console' version "${MIRAI_VERSION}"
+}
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+    maven { url "https://maven.aliyun.com/repository/central"}
+    maven { url 'https://jitpack.io' }
+}
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+test {
+    useJUnitPlatform()
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+mirai { jvmTarget = JavaVersion.VERSION_11}
+
+
+version = '-SNAPSHOT'
+
+dependencies {
+    
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+    
+    testCompile "junit:junit:4.11"
+}
+
+
+
+
+
+
+
+
+
+
+
+
